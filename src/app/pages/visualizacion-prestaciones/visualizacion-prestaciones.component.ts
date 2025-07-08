@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './visualizacion-prestaciones.component.html',
   styleUrl: './visualizacion-prestaciones.component.css'
 })
-export class VisualizacionPrestacionesComponent {
+export default class VisualizacionPrestacionesComponent {
 
 }

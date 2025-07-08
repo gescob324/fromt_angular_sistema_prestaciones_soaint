@@ -1,38 +1,31 @@
 import { Routes } from '@angular/router';
-import LoginComponent from './pages/login/login.component';
-import DashboardComponent from './pages/dashboard/dashboard.component';
-import { VisualizacionEmpleadosComponent } from './pages/visualizacion-empleados/visualizacion-empleados.component';
-import { CrearEmpleadoComponent } from './pages/crear-empleado/crear-empleado.component';
-import { VisualizacionPrestacionesComponent } from './pages/visualizacion-prestaciones/visualizacion-prestaciones.component';
+import LoginComponent from './authentication/login/login.component';
 
 export const routes: Routes = [
     
     
     {
         path: '',
-        redirectTo: 'login',
-        pathMatch: 'full'
-    },
-    {
-        path:'login',
         component: LoginComponent
+        
     },
     {
-        path:'dashboard',
-        component: DashboardComponent
+                path:'dashboard',
+                loadComponent: ()=> import ('./pages/dashboard/dashboard.component')
     },
     {
-        path:'visualizacion-empleados',
-        component: VisualizacionEmpleadosComponent
+                path:'visualizacion-empleados',
+                loadComponent: ()=> import ('./pages/visualizacion-empleados/visualizacion-empleados.component')
     },
     {
-        path:'crear-empleado',
-        component: CrearEmpleadoComponent
+                path:'crear-empleado',
+                loadComponent: () => import('./pages/crear-empleado/crear-empleado.component')
     },
     {
-        path:'visualizacion-prestaciones',
-        component: VisualizacionPrestacionesComponent
+                path:'visualizacion-prestaciones',
+                loadComponent: () => import('./pages/visualizacion-prestaciones/visualizacion-prestaciones.component')
     }
-
+   
+  
         
 ]; 

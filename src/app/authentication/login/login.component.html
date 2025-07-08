@@ -3,9 +3,9 @@
             <form>
                 <h1>Iniciar Sesión</h1>
                 <span>Ingrese su usuario y contraseña</span>
-                <input type="email"   placeholder="usuario">
-                <input type="password"   placeholder="contraseña">
-                <button  type="submit">Ingresar</button>
+                <input [(ngModel)]="emailOrCi" type="email"   placeholder="usuario" name="emailOrCi">
+                <input [(ngModel)]="password" type="password"   placeholder="contraseña" name="password">
+                <button (click)="login()" type="submit">Ingresar</button>
             </form>
         </div>
         <div class="toggle-container">
