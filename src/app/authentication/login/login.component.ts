@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../core/guards/service/auth.service';
+import { AuthService } from '../../core/service/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,7 +21,7 @@ constructor(private authservice: AuthService, private router:Router){
 
 login(): void{
   this.authservice.login(this.emailOrCi, this.password).subscribe({
-    next: ()=> this.router.navigate(['dashboard']),
+    next: (response)=> this.router.navigate(['visualizacion-empleados']),
     error: (err) => console.error('la puta madre')
   })
 }

@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { response } from 'express';
 import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  getToekn() {
+    throw new Error('Method not implemented.');
+  }
   private LOGIN_URL = 'http://localhost:5050/prestaciones/api/v1/auth/login';
   private tokenkey = 'authToken'
 
@@ -50,4 +52,6 @@ export class AuthService {
       localStorage.removeItem(this.tokenkey);
       this.router.navigate(['login'])
     }
+
+ 
 }
