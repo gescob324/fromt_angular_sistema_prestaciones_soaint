@@ -21,8 +21,8 @@ constructor(private authservice: AuthService, private router:Router){
 
 login(): void{
   this.authservice.login(this.emailOrCi, this.password).subscribe({
-    next: (response)=> this.router.navigate(['visualizacion-empleados']),
-    error: (err) => console.error('la puta madre')
+    next: (response)=> this.router.navigate(['dashboard']),
+    error: (err) => console.error('error')
   })
 }
 

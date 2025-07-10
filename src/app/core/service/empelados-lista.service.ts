@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Empleados } from '../../model/empleados';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,4 +16,6 @@ export class EmpeladosListaService {
   getempleadoslista():Observable<Empleados []>{
     return this.httpclient.get<Empleados[]>(this.apilistaempleados)
   }
+
+  
 }
